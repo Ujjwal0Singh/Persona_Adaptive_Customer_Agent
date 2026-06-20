@@ -8,6 +8,15 @@ Pipeline per message:
   Escalation Check -> Adaptive Response OR Human Handoff JSON
 """
 
+import os
+
+# Must be set BEFORE chromadb (and its transitive opentelemetry/protobuf deps)
+# are imported anywhere in the process. Avoids:
+#   TypeError: Descriptors cannot be created directly ...
+# which happens when the installed protobuf version doesn't match the
+# pre-generated _pb2.py files bundled with chromadb's opentelemetry exporter.
+os.environ.setdefault("PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION", "python")
+
 import logging
 
 import streamlit as st
