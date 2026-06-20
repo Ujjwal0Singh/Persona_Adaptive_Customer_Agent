@@ -6,6 +6,8 @@ retrieves grounded answers from a local knowledge base, adapts its tone and
 depth to the persona, and escalates to a human agent when confidence is low
 or the topic is sensitive.
 
+🔗 **Live demo:** [Persona-Adaptive Support Agent](https://personaadaptivecustomeragent-bpobebhozbnvjwyycndjgt.streamlit.app/)
+
 ## Architecture
 
 ```
